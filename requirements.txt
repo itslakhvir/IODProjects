@@ -13,3 +13,6 @@ jinja2
 numpy
 MarkupSafe
 mlxtend
+PyTorch
+TensorFlow >= 2.0
+Flax
