@@ -7,7 +7,6 @@ nltk
 scikit-learn
 plotly
 regex
-tranformers
 jinja2
 numpy
 MarkupSafe
