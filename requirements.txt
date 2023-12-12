@@ -2,3 +2,13 @@ flask>=1.1.2
 gunicorn>=20.0.4
 pandas>=1.1.3
 matplotlib
+seaborn
+nltk
+scikit-learn
+plotly
+string
+regex
+tranformers
+jinja2
+numpy
+MarkupSafe
