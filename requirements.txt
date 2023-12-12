@@ -6,6 +6,7 @@ seaborn
 nltk
 nlp
 scikit-learn
+transformers
 plotly
 regex
 jinja2
