@@ -14,5 +14,4 @@ numpy
 MarkupSafe
 mlxtend
 Torch
-TensorFlow >= 2.0
 Flax
