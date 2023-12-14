@@ -1,7 +1,7 @@
 
 from flask import Flask, request, render_template
-import model  # Assuming model.py contains necessary model functions
-import utils  # Assuming utils.py contains necessary utility functions
+#import model  # Assuming model.py contains necessary model functions
+#import utils  # Assuming utils.py contains necessary utility functions
 import os
 
 app = Flask(__name__)
@@ -15,8 +15,9 @@ def predict():
     if request.method == 'POST':
         text = request.form['text']
         # Assuming a function in model.py to make predictions
-        prediction = model.predict_stress(text)  
-        return render_template('result.html', prediction=prediction)
+        #prediction = model.predict_stress(text)  
+        prediction="stressed"
+        return render_template('index.html', prediction=prediction)
 
 if __name__ == '__main__':
     port = int(os.environ.get('PORT', 5000))
