@@ -71,6 +71,8 @@ def plot_confusion_matrix(y_true, y_pred, model_name):
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.svm import SVC
 from sklearn.neighbors import KNeighborsClassifier
+from sklearn.pipeline import make_pipeline
+
 
 models = [RandomForestClassifier(), SVC(), KNeighborsClassifier()]
 model_names = ['RandomForestClassifier', 'SVC', 'KNeighborsClassifier']
