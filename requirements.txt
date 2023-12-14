@@ -27,3 +27,4 @@ virtualenv==20.24.6
 numpy
 matplotlib
 plotly
+gunicorn
