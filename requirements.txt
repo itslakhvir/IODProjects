@@ -20,8 +20,6 @@ spacy-loggers==1.0.5
 text-unidecode
 tokenizer==3.4.3
 tokenizers==0.15.0
-torchaudio==2.1.1
-torchvision==0.16.1
 transformers==4.35.2
 Unidecode
 urllib3
