@@ -130,7 +130,11 @@ def preprocess_text(text):
     tokens = lemmatize_words(tokens)
     return ' '.join(tokens)
 
+data=pd.read_csv(r"stress.csv")
+
 # Split your data into training and testing sets
+from sklearn.model_selection import train_test_split,GridSearchCV
+
 X_train, X_test, y_train, y_test = train_test_split(data['text'], data['label'], test_size=0.2, random_state=42)
 
 # Assuming you have a trained pipeline with SVC
