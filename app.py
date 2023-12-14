@@ -2,6 +2,7 @@
 from flask import Flask, request, render_template
 import model  # Assuming model.py contains necessary model functions
 import utils  # Assuming utils.py contains necessary utility functions
+import os
 
 app = Flask(__name__)
 
@@ -18,4 +19,6 @@ def predict():
         return render_template('result.html', prediction=prediction)
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    port = int(os.environ.get('PORT', 8000))
+    app.run(host='0.0.0.0', port=port)
+    
