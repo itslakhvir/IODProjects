@@ -1,32 +1,24 @@
+from flask import Flask, request, jsonify
+import pickle
 
-from flask import Flask, request, render_template
-#import model  # Assuming model.py contains necessary model functions
-#import utils  # Assuming utils.py contains necessary utility functions
-import os
-import joblib
-import pandas as pd
-import numpy as np
+# Load the pre-trained model
+model_path = 'stress_detection_model.pkl'
+with open(model_path, 'rb') as file:
+    model = pickle.load(file)
 
 app = Flask(__name__)
 
-with open("stress_detection_model.pkl", "rb") as file:
-    model = joblib.load(file)
-
-
-@app.route('/')
-def home():
-    return render_template('index.html')
-
 @app.route('/predict', methods=['POST'])
 def predict():
-    if request.method == 'POST':
-        text = request.form['text']
-        # Assuming a function in model.py to make predictions
-        prediction = model.predict(pd.Series(text))[0]  
-        prediction=np.where(prediction == 1, "Stressed", "Not Stressed")
-        return render_template('index.html', prediction=prediction)
+    data = request.get_json(force=True)
+    text_input = data['text']
+
+    # Assuming your model takes a string and returns 'stress' or 'no stress'
+    prediction = model.predict([text_input])[0]
+
+    # Convert prediction to a human-readable format
+    result = 'stress' if prediction == 1 else 'no stress'
+    return jsonify({'prediction': result})
 
 if __name__ == '__main__':
-    port = int(os.environ.get('PORT', 3000))
-    app.run(debug=True, host='0.0.0.0', port=port)
-    
+    app.run(debug=True, host='0.0.0.0')
