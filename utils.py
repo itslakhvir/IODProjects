@@ -68,6 +68,10 @@ def plot_confusion_matrix(y_true, y_pred, model_name):
     plt.show()
 
 # Models and their predictions
+from sklearn.ensemble import RandomForestClassifier
+from sklearn.svm import SVC
+from sklearn.neighbors import KNeighborsClassifier
+
 models = [RandomForestClassifier(), SVC(), KNeighborsClassifier()]
 model_names = ['RandomForestClassifier', 'SVC', 'KNeighborsClassifier']
 
