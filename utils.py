@@ -27,6 +27,42 @@
 
 # # Display the first few rows with the new 'label' column
 # data.head()
+import matplotlib.pyplot as plt
+import seaborn as sns
+from sklearn.metrics import confusion_matrix
+from sklearn.model_selection import train_test_split
+from sklearn.svm import SVC
+from sklearn.pipeline import make_pipeline
+from sklearn.feature_extraction.text import TfidfVectorizer
+from sklearn.ensemble import RandomForestClassifier
+from sklearn.neighbors import KNeighborsClassifier
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+import nltk
+import nlp
+from sklearn.model_selection import LearningCurveDisplay,train_test_split,GridSearchCV
+import plotly
+from nltk.tokenize import word_tokenize
+from nltk.corpus import stopwords
+from nltk.stem import WordNetLemmatizer
+from sklearn.naive_bayes import MultinomialNB
+from sklearn.preprocessing import MinMaxScaler,LabelEncoder
+from sklearn.model_selection import GridSearchCV
+from sklearn.feature_extraction.text import CountVectorizer,TfidfTransformer
+import re 
+import string
+import plotly.express as px
+from sklearn.model_selection import train_test_split,GridSearchCV
+from sklearn.feature_extraction.text import TfidfVectorizer
+from sklearn.metrics import accuracy_score,confusion_matrix,ConfusionMatrixDisplay
+from sklearn.model_selection import cross_val_score
+from sklearn.decomposition import PCA
+from mlxtend.plotting import plot_decision_regions
+from sklearn.metrics import classification_report
+from transformers import BertTokenizer
+from sklearn.naive_bayes import BernoulliNB
+
 
 
 # Step 1: Text Preprocessing
@@ -53,9 +89,7 @@ def lemmatize_words(text):
 
 # Step 7: Classification Report and Confusion Matrix
 
-import matplotlib.pyplot as plt
-import seaborn as sns
-from sklearn.metrics import confusion_matrix
+
 
 # Function to plot confusion matrix
 def plot_confusion_matrix(y_true, y_pred, model_name):
@@ -68,10 +102,7 @@ def plot_confusion_matrix(y_true, y_pred, model_name):
     plt.show()
 
 # Models and their predictions
-from sklearn.ensemble import RandomForestClassifier
-from sklearn.svm import SVC
-from sklearn.neighbors import KNeighborsClassifier
-from sklearn.pipeline import make_pipeline
+
 
 
 models = [RandomForestClassifier(), SVC(), KNeighborsClassifier()]
@@ -90,10 +121,7 @@ for model, model_name in zip(models, model_names):
     plot_confusion_matrix(y_test, y_pred, model_name)
 
 
-from sklearn.model_selection import train_test_split
-from sklearn.svm import SVC
-from sklearn.pipeline import make_pipeline
-from sklearn.feature_extraction.text import TfidfVectorizer
+
 
 # Assuming you have the word_tokenize, remove_stopwords, and lemmatize_words functions defined
 def preprocess_text(text):
